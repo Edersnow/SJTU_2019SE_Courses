@@ -1,0 +1,52 @@
+# Name: Lin Qilong, ID: 519021910380
+
+    .pos 0
+    irmovq stack, %rsp
+    call main
+    halt
+
+    .align 8
+src:
+    .quad 0x00a
+    .quad 0x0b0
+    .quad 0xc00
+
+dest:
+    .quad 0x111
+    .quad 0x222
+    .quad 0x333
+
+main:
+    irmovq src, %rdi
+    irmovq dest, %rsi
+    irmovq $3, %rdx
+    call copy_block
+    ret
+
+copy_block:
+    pushq %rbx
+    pushq %rbp
+    pushq %r12
+    xorq %rax, %rax
+    irmovq $8, %rbp
+    irmovq $1, %r12
+    jmp test
+
+loop:
+    mrmovq (%rdi), %rbx
+    rmmovq %rbx, (%rsi)
+    xorq %rbx, %rax
+    addq %rbp, %rdi
+    addq %rbp, %rsi
+    subq %r12, %rdx
+
+test:
+    andq %rdx, %rdx
+    jne loop
+    popq %r12
+    popq %rbp
+    popq %rbx
+    ret
+
+    .pos 0x200
+stack:
