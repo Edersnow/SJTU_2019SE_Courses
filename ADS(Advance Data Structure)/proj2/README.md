@@ -1,6 +1,7 @@
 ## Project 2: KVStore using Log-structured Merge Tree
 
 项目发布文件见handout.pdf
+
 项目说明问题见handin.pdf
 
 The handout files include two main parts:
