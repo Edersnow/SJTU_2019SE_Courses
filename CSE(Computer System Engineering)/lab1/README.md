@@ -1,6 +1,6 @@
 # cse-2021-fall
 
-To see the handout of this lab, click [here](https://ipads.se.sjtu.edu.cn/courses/cse/labs/lab1.html)
+To see the handout of this lab, click [here](https://ipads.se.sjtu.edu.cn/courses/cse/2021/labs/lab1.html)
 
 Here is the copy of the handout:
 
